@@ -1,0 +1,8 @@
+1. Create user registration path and implement the logic. - 1 point
+2. Develop the functionality to create rouble account, initially set to be empty with zero funds. - 1 point
+3. Add the opportunity to create different accounts for a user in different currencies. - 1 point
+4. Develop the functionality to add bank cards. - 1 point
+5. Implement the logic of invoicing based on banking details in the B2B scenario. - 2 points
+6. Create functionality for getting the payment details from Accounting Service API with with relevant documents. - 2 point
+7. Develop the logic for B2C scenario enabling real-time payment processing through acquiring. - 2 point
+8. Add the logic for other services and microservices to deduct funds from accounts with positive balances. - 1 point

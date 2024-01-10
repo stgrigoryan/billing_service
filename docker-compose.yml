@@ -1,0 +1,36 @@
+version: '3.9'
+
+services:
+  nestjs:
+    container_name: billing_service
+    env_file:
+      - .env
+    environment:
+      - DB_HOST=postgres
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    depends_on:
+      - postgres
+    command: npm run start
+    ports:
+      - 3000:3000
+    networks:
+      - backend
+    restart: unless-stopped
+  postgres:
+    container_name: postgres
+    image: postgres
+    env_file:
+      - .env
+    environment:
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    ports:
+      - 5432:5432
+    networks:
+      - backend
+    restart: unless-stopped
+networks:
+  backend:
